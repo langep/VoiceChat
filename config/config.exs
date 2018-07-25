@@ -6,8 +6,10 @@
 use Mix.Config
 
 # General application configuration
-config :voice_chat,
-  ecto_repos: [VoiceChat.Repo]
+
+# TODO(langep): ENABLE THIS AGAIN ONCE WE ARE USING A DATABASE
+#config :voice_chat,
+# ecto_repos: [VoiceChat.Repo] 
 
 # Configures the endpoint
 config :voice_chat, VoiceChatWeb.Endpoint,
