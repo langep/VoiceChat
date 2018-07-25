@@ -9,7 +9,7 @@ defmodule VoiceChat.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      # supervisor(VoiceChat.Repo, []), # TODO(langep): ENABLE THIS AGAIN ONCE WE ARE USING A DATABASE
+      supervisor(VoiceChat.Repo, []),
       # Start the endpoint when the application starts
       supervisor(VoiceChatWeb.Endpoint, []),
       supervisor(VoiceChatWeb.Presence, []),
