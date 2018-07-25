@@ -1,0 +1,24 @@
+{
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "deploy": "webpack --mode production",
+    "start": "npm run watch",
+    "watch": "webpack --mode development --watch-stdin"
+  },
+  "dependencies": {
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "simple-peer": "^9.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "file-loader": "^1.1.11",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0"
+  }
+}
