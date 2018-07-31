@@ -15,7 +15,7 @@ socket.connect()
 let userList = document.getElementById("user-list")
 let sendButton = document.getElementById("send-btn")
 let chatInput = document.getElementById("chat-input")
-let chatArea = document.getElementById("chat-area")
+let chatMessages = document.getElementById("chat-messages")
 let room = socket.channel("rooms:lobby", {})
 let presences = {}
 
@@ -59,7 +59,7 @@ const renderPresences = presences => {
 }
 
 const renderComment = comment => {
-  chatArea.innerHTML += `
+  chatMessages.innerHTML += `
     <li class="">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
@@ -73,6 +73,8 @@ const renderComment = comment => {
 
 ///////////////////////////////////////////////////////////
 import Peer from 'simple-peer';
+
+let streams = document.getElementById('streams')
 
 let hasOwnMediaStream = false;
 let ownMediaStream = null;
@@ -128,13 +130,17 @@ const onInitialPresencesReceived = (presences) => {
 
 const createPeer = (userId, initiator = false)  => 
 {
-  let peer = Peer({initiator: initiator})
+  let peer = Peer({initiator: initiator, trickle: true})
   if (hasOwnMediaStream) {
     peer.addStream(ownMediaStream)
   }
   peer.on('data', logReceivedData(userId))
   peer.on('signal', sendSignal(userId))  
   peer.on('stream', createVideoTagAndStream)
+  peer.on('connect', () => {
+    console.log("CONNECTED")
+    peer.send("Hello");
+  })
 
   return peer
 }
@@ -152,9 +158,8 @@ const sendSignal = userId => {
 }
 
 const createVideoTagAndStream = stream => {
-  let streamContainer = document.getElementById('stream-container')
   let video = document.createElement('video')
-  streamContainer.appendChild(video)   
+  streams.appendChild(video)   
   video.src = window.URL.createObjectURL(stream)
   video.play()
 }

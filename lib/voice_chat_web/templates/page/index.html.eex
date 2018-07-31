@@ -1,24 +1,5 @@
-<div class="row">
-  
-  <div class="col s3">
-    <ul id="user-list" class="collection"></ul>
-  </div>
- 
-  <div class="col s9"> 
-    <ul id="chat-area"></ul>
-
-    <div class="input-field col s12">
-      <div class="row">
-        <div class="col s11">
-          <textarea id="chat-input" class="materialize-textarea"></textarea>
-        </div>
-        <div class="col s1">
-          <button id="send-btn" type='button' class="btn">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div id="stream-container" style="hidden"></div>
+<ul id="user-list" class="collection"></ul>
+<ul id="chat-messages"></ul>
+<textarea id="chat-input" class="materialize-textarea"></textarea>
+<button id="send-btn" type='button' class="btn">Send</button>
+<div id="streams" style="hidden"></div>

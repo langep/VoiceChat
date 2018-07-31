@@ -16,19 +16,15 @@
   <body>
     <nav class="light-blue">
       <div class="nav-wrapper container">
-        <a href="/" class="brand-logo">VoiceChat</a>
+        <a href="/" class="brand-logo center">VoiceChat</a>
       </div>      
-    </nav>
+    </nav> <!-- /header -->
 
-    <div class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <main role="main">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
 
-    </div> <!-- /container -->
     <script>
       window.userId = "<%= @conn.params["name"] %>"
     </script>
