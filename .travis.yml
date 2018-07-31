@@ -4,7 +4,7 @@ elixir:
   - 1.6.6
 
 addons:
-  postgresql: '9.6.6'
+  postgresql: '9.6'
 
 services:
   - postgresql
@@ -15,3 +15,6 @@ before_script:
 
 script:
   - mix test
+
+notifications:
+  email: false
