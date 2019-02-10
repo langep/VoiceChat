@@ -160,7 +160,7 @@ const sendSignal = userId => {
 const createVideoTagAndStream = stream => {
   let video = document.createElement('video')
   streams.appendChild(video)   
-  video.src = window.URL.createObjectURL(stream)
+  video.srcObject = stream
   video.play()
 }
 
