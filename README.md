@@ -28,4 +28,4 @@ For now, you need to provide your username as query parameter e.g.
 
 ## Try it
 
-You can try it out here https://fathomless-everglades-76462.herokuapp.com/?name=test.
+You can try it out here https://fathomless-everglades-76462.herokuapp.com/?name=test. You want to connect with in two tabs with different names.
