@@ -8,6 +8,10 @@ This is simple to implement and requires little backend infrastructure. The only
 
 The downsides are that it requires more compute power on the client side due to encoding and decoding multiple streams. It also scales poorly because each new client adds N - 1 new connections (i.e. it connects to everyone but itself).
 
+## Notice
+
+This was a toy project to learn about Elixir, Phoenix and WebRTC. It is by no means a production ready system.
+
 ## Usage
 
 To start your Phoenix server:
