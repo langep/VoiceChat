@@ -2,7 +2,7 @@
 
 # VoiceChat
 
-VoiceChat is a WebRTC applications. This app uses a mesh architecture compared to using a MCU or SFU. 
+VoiceChat is a WebRTC applications. This app uses a mesh architecture compared to using a MCU or SFU.
 
 This is simple to implement and requires little backend infrastructure. The only required pieces are a signaling server (which is provided by the Phoenix app) and a STUN server (we are using google's stun servers). We are not using a TURN server and just hope people are unproblematic networks.
 
@@ -25,3 +25,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 For now, you need to provide your username as query parameter e.g. 
 [`localhost:4000?name=AwesomeUser`](http://localhost:4000?name=AwesomeUser).
+
+## Try it
+
+You can try it out here https://fathomless-everglades-76462.herokuapp.com/?name=test.
